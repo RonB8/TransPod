@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">TransPod</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3498db; /* New background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Changed 'height' to 'min-height' for better responsiveness */
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            margin: auto;
+        }
+
+        textarea,
+        select,
+        input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result,
+        #result1,
+        #H2 {
+            display: none;
+        }
+
+        #audioDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #audioPlayer {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="fromLang"></h1>
+    <h2 id="toLang"></h2>
+    <div class="container">
+        <div id="audioDiv">
+            <audio id="audioPlayer" controls>
+                <source src="static\Quiet sound.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <p id="result">אח שלי פח שלי</p>
+        <h5 id="result1">hey1</h5>
+        <h2 id="H2"></h2>
+        <textarea id="text" rows="5" cols="30"></textarea>
+        <select id="voices"></select>
+        <select id="voicesTrn" style="display: none;"></select>
+        <input id="rate" type="range" min="0.5" max="2" value="1" step="0.1" />
+        <button id="speak" onclick="startTimer()">Speak</button>
+        <button id="translate" onclick="stopTimer()">Translate</button>
+        <button id="pause" onclick="stopTimer()">Pause</button>
+        <button id="stop" onclick="resetTimer()">Stop</button>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="indiaTrans/js/countries.js"></script>
+    <script src="static/jquery.translate.js"></script>
+    <script src="static/TranslateFunc.js"></script>
+    <script src="indiaTrans/js/script.js"></script>
+    <script src="static/app.js"></script>
+    <script id="Timer" src="static/timer.js"></script>
+</body>
+
+</html>
